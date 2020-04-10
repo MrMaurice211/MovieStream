@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '5.1.0'
+}
+
+repositories {
+  mavenCentral()
+  maven { url = 'https://jitpack.io' }
+}
+
+dependencies {
+  compile "com.github.gikkman:Java-Twirk:0.5"
+  compile 'uk.co.caprica:vlcj:4.4.0'
+}
+
+mainClassName = 'me.mrmaurice.mb.MrBot'
+
+jar {
+    manifest {
+        attributes 'Main-Class': project.mainClassName
+    }
+  baseName = 'MovieStream'
+}
+
+shadowJar {
+    classifier = null
+}
